@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# 📚 ShelfLog — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShelfLog is a personal book logging app that allows users to track their reading journey — including books they want to read, are currently reading, or have completed.
 
-Currently, two official plugins are available:
+This is the **frontend** of the app, built using a modern, scalable tech stack focused on developer productivity and performance.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⚛️ **React + TypeScript** – Strongly typed UI development
+- 🗂 **Zustand** – Lightweight state management for filters
+- ⚡️ **React Query** – Data fetching, caching, and syncing
+- 🧾 **React Hook Form + Zod** – Form validation and control
+- 🎨 **Tailwind CSS** – Utility-first styling
+- 🔔 **Toastify & SweetAlert2** – Elegant user notifications
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🔧 Features
+
+- ✅ Add a book with title, author, category, status, and notes
+- ✏️ Edit/update existing book entries
+- ❌ Delete books with confirmation prompts
+- 🔍 Filter books by category and reading status
+- 📋 Responsive table
+- 🔄 Real-time UI sync with backend after add/update/delete
+
+---
+
+## ⚙️ Setup & Run
+
+### 1. Install dependencies
+
+```bash
+git clone https://github.com/liull-4r/frontend.git
+cd frontend
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Set environment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+## 📄 Environment Variable
+
+Create a `.env` file in the root of the `frontend` directory with:
+---
+VITE_API_URL=[http://localhost:3000/api/v1](http://localhost:3000/api/v1)
+
+### 3. Run the app
+
+npm run dev
+
+The app will start at: [http://localhost:517](http://localhost:5174)3 (or the port assigned by Vite)
+
+
+## 🧠 Implementation Approach
+
+ShelfLog’s frontend is built with simplicity, modularity, and developer efficiency in mind.
+
+* **Zustand** is used for local UI state such as filters without boilerplate.
+* **React Query** manages API calls with built-in caching, loading states, and auto-refresh.
+* **React Hook Form + Zod** ensures clean form validation and user-friendly error handling.
+* **SweetAlert2** provides confirmation modals for destructive actions like deletes.
+* **Toastify** gives real-time feedback on success or failure.

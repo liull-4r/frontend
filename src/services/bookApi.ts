@@ -9,13 +9,7 @@ export const createBookApi = async (data: BookFormType): Promise<Book> => {
   const res = await axios.post(`${API}/create-book`, data);
   return res.data.data;
 };
-// export const getBooksApi = async (
-//   filters?: Partial<Pick<Book, "category" | "status">>
-// ): Promise<Book[]> => {
-//   const query = new URLSearchParams(filters as any).toString();
-//   const res = await axios.get(`${API}/bookss${query ? `?${query}` : ""}`);
-//   return res.data.data;
-// };
+
 
 export const getBooksApi = async (
   filters?: Partial<Pick<Book, "category" | "status">>
@@ -31,7 +25,7 @@ export const getBooksApi = async (
   }
 
   const query = new URLSearchParams(cleanedFilters).toString();
-  const res = await axios.get(`${API}/bookss${query ? `?${query}` : ""}`);
+  const res = await axios.get(`${API}/books${query ? `?${query}` : ""}`);
   return res.data.data;
 };
 

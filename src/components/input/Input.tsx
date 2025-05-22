@@ -40,7 +40,7 @@ export const CustomeInput: React.FC<CustomInputProps> = ({
     <div className="flex flex-col">
       <label
         htmlFor={name}
-        className="font-medium text-sm max-md:text-[0.8rem]"
+        className="text-sm max-md:text-[0.8rem]"
       >
         {label}
       </label>
@@ -49,7 +49,7 @@ export const CustomeInput: React.FC<CustomInputProps> = ({
         type={type}
         {...register}
         value={watch ? watch(name) : undefined} // Use watch if provided
-        className={`w-full mt-4 h-10 border-[0.3px] rounded-md text-black font-sans font-medium text-sm
+        className={`w-full mt-4 h-10 border-[0.3px] rounded-md text-black font-sans text-sm
                 focus:outline focus:outline-primarybrandColor 
                 px-3 ${error ? "border-red-600" : "border-gray-300"}`}
         placeholder={placeholder}

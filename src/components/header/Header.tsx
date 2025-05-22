@@ -9,14 +9,7 @@ const Header = () => {
         </Link>
 
         <nav className="flex gap-6 items-center text-gray-700 font-medium">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "text-blue-600 underline" : "hover:text-blue-600"
-            }
-          >
-            Home
-          </NavLink>
+         
           <NavLink
             to="/add-book"
             className={({ isActive }) =>
